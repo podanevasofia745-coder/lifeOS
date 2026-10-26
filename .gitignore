@@ -4,3 +4,6 @@ node_modules/
 !.env.example
 *.tsbuildinfo
 out/
+
+.next-e2e/
+test-results/
