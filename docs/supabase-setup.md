@@ -7,6 +7,6 @@
 5. Authentication → URL Configuration: Site URL — https://lifeos-karusel.netlify.app. Добавьте его в разрешённые redirect URLs; для разработки добавьте http://localhost:3000.
 6. Откройте Connect либо Settings → API. Найдите Project URL и publishable key (или legacy anon key). Это публичные параметры, но secret/service_role и пароль базы не нужны браузеру — не используйте их.
 7. В Netlify откройте настройки lifeos-karusel → Environment variables. Добавьте NEXT_PUBLIC_SUPABASE_URL и NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY с полученными значениями. Для запуска в Codex нужны такие же параметры в настройках облачной среды. Изменение переменных Netlify не меняет переменные Codex.
-8. Для новой ветки проекта Next.js нужны Build command `npm run build`, Publish directory `.next`, Base directory пусто. Действующий сайт пока остаётся на старой версии main. Переход на новую версию — после настройки и проверки, отдельным слиянием ветки.
+8. Для новой ветки проекта Next.js нужны Build command `npm run build`, Publish directory `out`, Base directory пусто. Действующий сайт пока остаётся на старой версии main. Переход на новую версию — после настройки и проверки, отдельным слиянием ветки.
 9. После деплоя зарегистрируйтесь, подтвердите почту, войдите. В Настройках задайте имя и часовой пояс, сохраните. Обновите страницу и проверьте, что профиль сохранился.
 10. Для приёмки безопасности запустите двухпользовательский тест по README в тестовом проекте. До него изоляция в реальном Supabase не считается проверенной.

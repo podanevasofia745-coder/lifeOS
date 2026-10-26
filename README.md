@@ -25,7 +25,7 @@ npm run dev
 
 ## Netlify (новая версия Next.js)
 
-Base directory: пусто. Build command: `npm run build`. Publish directory: `.next`. Netlify автоматически использует Next.js runtime. Добавьте `NEXT_PUBLIC_SUPABASE_URL` и `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (либо legacy `NEXT_PUBLIC_SUPABASE_ANON_KEY`) в Environment variables. Выполните новый deploy после изменения переменных. Ключи service_role/secret не добавлять.
+Base directory: пусто. Build command: `npm run build`. Publish directory: `out`. Netlify публикует папку out; настройки зафиксированы в netlify.toml. Добавьте `NEXT_PUBLIC_SUPABASE_URL` и `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (либо legacy `NEXT_PUBLIC_SUPABASE_ANON_KEY`) в Environment variables. Выполните новый deploy после изменения переменных. Ключи service_role/secret не добавлять.
 
 ## Проверки
 
@@ -36,7 +36,7 @@ npm run build
 npm start
 ```
 
-`npm start` запускает production Next.js на порту 3000 после build. `npm run dev` — разработка. HTTP smoke: запрос `/` должен вернуть экран настройки при отсутствии окружения; это не проверка auth.
+`npm start` запускает сервер статического экспорта на порту 3000 после build. `npm run dev` — разработка. HTTP smoke: запрос `/` должен вернуть экран настройки при отсутствии окружения; это не проверка auth.
 
 Для интеграционного RLS-теста создайте два подтверждённых тестовых аккаунта в тестовом проекте. Задайте URL, публичный ключ и `TEST_USER_A_EMAIL`, `TEST_USER_A_PASSWORD`, `TEST_USER_B_EMAIL`, `TEST_USER_B_PASSWORD` безопасно в окружении, затем `npm run test:rls`. Скрипт не выводит значения, не использует service_role, проверяет изоляцию в обе стороны, изменение собственного профиля и конфликт версии. Меняется только версия собственного тестового профиля (имя сохраняется).
 
